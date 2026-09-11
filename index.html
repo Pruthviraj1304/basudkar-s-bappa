@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>श्री गणेशोत्सव २०२६ - बासुदकर परिवार निमंत्रण</title>
+  <meta name="description" content="बासुदकर परिवारातर्फे श्री गणेशोत्सव २०२६ चे सस्नेह निमंत्रण. बाप्पाच्या दर्शनासाठी व तीर्थप्रसादासाठी आपण सहकुटुंब उपस्थित राहावे.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪔</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Rozha+One&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Floating Falling Petals Background Canvas -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- ========================================================================= -->
+  <!-- 1. SACRED ENTRANCE GATE SCREEN (LANDING OVERLAY)                          -->
+  <!-- ========================================================================= -->
+  <div id="tilakGate" class="tilak-gate-overlay">
+    <div class="gate-stars-bg"></div>
+    <div class="divine-light-burst"></div>
+    <div class="gate-content">
+      <div class="gate-invocation" data-i18n="gateInvocation">
+        || श्री व्यंकटेश प्रसन्न || || श्री गणेशाय नमः ||
+      </div>
+
+      <div id="tilakEmblem" class="tilak-sacred-wrapper" title="Click to Enter">
+        <div class="tilak-halo-ring"></div>
+        <div class="tilak-pulse-ring"></div>
+        <img src="assets/images/balaji_tilak.jpg" alt="Sacred Balaji Namam Tilak" class="tilak-img">
+      </div>
+
+      <h1 class="gate-title text-gold" data-i18n="gateTitle">श्री गणेशोत्सव २०२६</h1>
+      <p class="gate-subtitle" data-i18n="gateSubtitle">बासुदकर परिवारातर्फे सस्नेह निमंत्रण</p>
+
+      <button id="openGateBtn" class="btn-open-gate" aria-label="Open Invitation">
+        <span data-i18n="gateBtn">निमंत्रण उघडा 🪔</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. STICKY TOP NAVIGATION BAR & AUDIO/INTERACTIVITY CONTROLS               -->
+  <!-- ========================================================================= -->
+  <header class="topbar">
+    <div class="container topbar-container">
+      <a href="#hero" class="brand-emblem">
+        <img src="assets/images/balaji_tilak.jpg" alt="Tilak" class="mini-tilak">
+        <div class="brand-text">
+          <span class="brand-title" data-i18n="brandTitle">बासुदकर परिवार</span>
+          <span class="brand-sub" data-i18n="brandSub">श्री गणेशोत्सव २०२६</span>
+        </div>
+      </a>
+
+      <div class="topbar-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button id="langMr" class="lang-btn active">मराठी</button>
+          <button id="langEn" class="lang-btn">English</button>
+        </div>
+
+        <!-- Temple Bell Ring -->
+        <button id="btnRingBell" class="ctrl-btn" title="Ring Temple Bell" aria-label="Ring Temple Bell">
+          <span>🔔</span>
+        </button>
+
+        <!-- Flower Shower -->
+        <button id="btnFlower" class="ctrl-btn" title="Flower Shower" aria-label="Flower Shower">
+          <span>🌸</span>
+        </button>
+
+        <!-- Devotional Music -->
+        <button id="btnMusic" class="ctrl-btn" title="Toggle Aarti Music" aria-label="Music">
+          <span>🎵</span>
+        </button>
+
+        <!-- Return to Tilak Gate -->
+        <button id="btnReopenGate" class="ctrl-btn" title="View Entrance Gate" aria-label="View Entrance Gate">
+          <span>🪔</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 3. HERO SECTION                                                           -->
+  <!-- ========================================================================= -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-card">
+        
+        <!-- 3 Distinct Stacked Lines -->
+        <div class="hero-header-stack">
+          <!-- Line 1: Sacred Invocation -->
+          <div class="sacred-header-badge" data-i18n="heroInvocation">
+            || श्री गणेशाय नमः || || श्री व्यंकटेश प्रसन्न ||
+          </div>
+          
+          <!-- Line 2: Main Festival Title -->
+          <h1 class="hero-title text-gold" data-i18n="heroTitle">श्री गणेशोत्सव २०२६</h1>
+          
+          <!-- Line 3: Formal Welcome Pill -->
+          <p class="hero-theme-pill" data-i18n="heroTheme">
+            ✨ सपरिवार बाप्पाच्या दर्शनासाठी हार्दिक निमंत्रण ✨
+          </p>
+        </div>
+
+        <!-- Grand Ganpati Idol Altar Display -->
+        <div class="darshan-image-wrapper">
+          <img src="assets/images/ganpati_bappa.jpg" alt="Shree Ganpati Bappa" class="darshan-img">
+          <div class="darshan-badge" data-i18n="darshanBadge">॥ श्री गणपती बाप्पा प्रसन्न ॥</div>
+        </div>
+
+        <!-- Live Countdown Timer (14th September 2026, 12:00 PM) -->
+        <div class="countdown-container">
+          <div class="countdown-label" data-i18n="countdownLabel">गणेश आगमनासाठी शिल्लक वेळ :</div>
+          <div class="countdown-grid">
+            <div class="time-tile">
+              <div id="countDays" class="time-number">00</div>
+              <div class="time-tag" data-i18n="days">दिवस</div>
+            </div>
+            <div class="time-tile">
+              <div id="countHours" class="time-number">00</div>
+              <div class="time-tag" data-i18n="hours">तास</div>
+            </div>
+            <div class="time-tile">
+              <div id="countMins" class="time-number">00</div>
+              <div class="time-tag" data-i18n="minutes">मिनिटे</div>
+            </div>
+            <div class="time-tile">
+              <div id="countSecs" class="time-number">00</div>
+              <div class="time-tag" data-i18n="seconds">सेकंद</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Jump Links -->
+        <div class="hero-cta-group">
+          <a href="#invitation" class="btn-primary" data-i18n="btnInvitation">📜 निमंत्रण पत्रिका</a>
+          <a href="#schedule" class="btn-secondary" data-i18n="btnSchedule">📅 कार्यक्रम रूपरेषा</a>
+          <a href="#location" class="btn-primary" data-i18n="btnLocation">📍 पत्ता व दिशा</a>
+          <a href="#timeline" class="btn-secondary" data-i18n="btnTimeline">📷 मागील उत्सव</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. HEARTFELT INVITATION CARD SECTION                                      -->
+  <!-- ========================================================================= -->
+  <section id="invitation" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="invitationTag">सस्नेह निमंत्रण</span>
+        <h2 class="section-title" data-i18n="invitationHeading">निमंत्रण पत्रिका</h2>
+      </div>
+
+      <div class="invitation-card">
+        <!-- Traditional Corner Motifs -->
+        <div class="card-corner-motif corner-tl"></div>
+        <div class="card-corner-motif corner-tr"></div>
+        <div class="card-corner-motif corner-bl"></div>
+        <div class="card-corner-motif corner-br"></div>
+
+        <!-- Sanskrit Shloka -->
+        <div class="shloka-box">
+          <div class="shloka-text" data-i18n="shlokaText">
+            वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥
+          </div>
+          <div class="shloka-meaning" data-i18n="shlokaMeaning">
+            (वाकडी सोंड, महाकाय शरीर आणि करोडो सूर्यांचे तेज असणाऱ्या हे गणराया, माझ्या सर्व कार्यातील विघ्ने दूर कर.)
+          </div>
+        </div>
+
+        <!-- Family Invitation Text -->
+        <div class="invitation-body-text">
+          <p data-i18n="invitationP1">
+            स्नेही जन व आप्तेष्ट,<br>
+            दरवर्षीप्रमाणे याही वर्षी आमच्या घरी विघ्नहर्ता मंगलमूर्ती गणरायाचे अत्यंत भक्तिभावाने व उत्साहात आगमन होत आहे.
+          </p>
+          <p data-i18n="invitationP2">
+            तरी आपण सर्वांनी आपल्या सहकुटुंब-सहपरिवारासह उपस्थित राहून आमच्या लाडक्या बाप्पाचे मंगलमय दर्शन घ्यावे आणि तीर्थप्रसादाचा लाभ घेऊन उत्सवाची शोभा वाढवावी, हीच आम्हा सर्व बासुदकर परिवारातर्फे नम्र व आग्रहाची विनंती.
+          </p>
+          <p data-i18n="invitationP3">
+            आपली उपस्थिती व सदिच्छा आमच्या उत्सवाचा आनंद द्विगुणीत करेल.
+          </p>
+        </div>
+
+        <!-- Basudkar Family Portrait -->
+        <div class="family-photo-wrapper">
+          <img src="assets/images/basudkar_family.jpg" alt="Basudkar Family" class="family-img">
+          <div class="family-photo-caption" data-i18n="familyCaption">॥ समस्त बासुदकर परिवार आपले सहर्ष स्वागत करत आहे ॥</div>
+        </div>
+
+        <!-- Signature Block -->
+        <div class="signature-block">
+          <span class="signature-label" data-i18n="signatureLabel">आपले नम्र व स्नेही,</span>
+          <span class="family-name text-gold" data-i18n="signatureFamily">समस्त बासुदकर परिवार</span>
+        </div>
+
+        <!-- Download Invitation Card Action -->
+        <div class="invitation-download-action">
+          <button id="btnDownloadCard" class="btn-download-card" aria-label="Download Invitation Card">
+            <span data-i18n="btnDownloadCard">📥 निमंत्रण पत्रिका डाऊनलोड करा</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. FESTIVAL SCHEDULE & TIMETABLE (कार्यक्रम पत्रिका)                       -->
+  <!-- ========================================================================= -->
+  <section id="schedule" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="scheduleTag">उत्सव रूपरेषा</span>
+        <h2 class="section-title" data-i18n="scheduleHeading">कार्यक्रम पत्रिका</h2>
+      </div>
+
+      <div class="schedule-grid">
+        <!-- Event 1: Sthapana -->
+        <div class="schedule-card">
+          <div class="schedule-icon-bubble">🪔</div>
+          <span class="schedule-day-badge" data-i18n="ev1Badge">पहिला दिवस</span>
+          <h3 class="schedule-event-title" data-i18n="ev1Title">श्री गणेश मूर्ती स्थापना व आरती</h3>
+          <div class="schedule-time">⏰ <span data-i18n="ev1Time">दुपारी १२:०० वाजता</span></div>
+          <p class="schedule-desc" data-i18n="ev1Desc">मंत्रोच्चारासहित श्री गणरायाची विधिवत प्राणप्रतिष्ठापना आणि पहिली महाआरती.</p>
+        </div>
+
+        <!-- Event 2: Nitya Pooja -->
+        <div class="schedule-card">
+          <div class="schedule-icon-bubble">🔔</div>
+          <span class="schedule-day-badge" data-i18n="ev2Badge">नित्य पूजा</span>
+          <h3 class="schedule-event-title" data-i18n="ev2Title">नित्य पूजा व संध्या आरती</h3>
+          <div class="schedule-time">⏰ <span data-i18n="ev2Time">दररोज संध्याकाळी ८:०० वाजता</span></div>
+          <p class="schedule-desc" data-i18n="ev2Desc">दैनिक भक्तिगीते, अथर्वशीर्ष पठण आणि सुमधुर आरती सोहळा.</p>
+        </div>
+
+        <!-- Event 3: Visarjan -->
+        <div class="schedule-card">
+          <div class="schedule-icon-bubble">🌺</div>
+          <span class="schedule-day-badge" data-i18n="ev3Badge">अंतिम दिवस</span>
+          <h3 class="schedule-event-title" data-i18n="ev3Title">उत्तर पूजा व विसर्जन मिरवणूक</h3>
+          <div class="schedule-time">⏰ <span data-i18n="ev3Time">संध्याकाळी ८:०० वाजता</span></div>
+          <p class="schedule-desc" data-i18n="ev3Desc">उत्तर पूजा, निरोप आरती आणि ढोल-ताशांच्या गजरात मंगल विसर्जन.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. RESIDENCE LOCATION & GOOGLE MAPS NAVIGATION                            -->
+  <!-- ========================================================================= -->
+  <section id="location" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="locationTag">पत्ता व मार्गदर्शन</span>
+        <h2 class="section-title" data-i18n="locationHeading">आमचे निवासस्थान</h2>
+      </div>
+
+      <div class="location-wrapper">
+        <!-- Address & Action Card -->
+        <div class="location-info-card">
+          <h3 class="venue-name" data-i18n="venueName">🏠 बासुदकर निवास</h3>
+          <p class="venue-address" data-i18n="venueAddress">
+            रूम नं. १०६ / ४ था मजला, खटाव बिल्डिंग, डॉ. एस. एस. राव रोड, इन्कम टॅक्स ऑफिसजवळ, लालबाग, मुंबई - ४०००१२.
+          </p>
+
+          <div class="location-actions">
+            <!-- Direct Google Maps Redirection Button -->
+            <button id="btnOpenMaps" class="btn-maps-nav" aria-label="Open in Google Maps">
+              <span data-i18n="btnOpenMaps">🗺️ थेट गुगल मॅप्सवर दिशा पहा</span>
+            </button>
+
+            <!-- Copy Address -->
+            <button id="btnCopyAddress" class="btn-secondary" aria-label="Copy Address">
+              <span data-i18n="btnCopyAddress">📋 पत्ता कॉपी करा</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Styled Interactive Map Preview Card -->
+        <div class="location-map-preview">
+          <div class="map-card-inner">
+            <iframe 
+              title="Khatav Building Location Preview"
+              src="https://maps.google.com/maps?q=Khatav+Building,+Parel,+Mumbai&t=&z=17&ie=UTF8&iwloc=&output=embed"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. PAST YEARS' DARSHAN TIMELINE (मागील वर्षांचे मंगलमय दर्शन)              -->
+  <!-- ========================================================================= -->
+  <section id="timeline" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="timelineTag">स्मरणिका व आठवणी</span>
+        <h2 class="section-title" data-i18n="timelineHeading">मागील वर्षांचे मंगलमय दर्शन</h2>
+      </div>
+
+      <div class="timeline-grid">
+        <!-- Year 2023 -->
+        <div class="timeline-card" data-title="॥ श्री गणेशोत्सव २०२३ - बासुदकर परिवार ॥">
+          <div class="timeline-img-wrapper">
+            <img src="assets/images/2023.jpg" alt="Ganpati Bappa 2023" class="timeline-img">
+          </div>
+          <div class="timeline-footer">
+            <div class="timeline-caption" data-i18n="year2023Caption">॥ श्री गणेशोत्सव २०२३ ॥</div>
+            <div class="timeline-subtext" data-i18n="year2023Sub">बासुदकर बाप्पा दर्शन</div>
+          </div>
+        </div>
+
+        <!-- Year 2024 -->
+        <div class="timeline-card" data-title="॥ श्री गणेशोत्सव २०२४ - बासुदकर परिवार ॥">
+          <div class="timeline-img-wrapper">
+            <img src="assets/images/2024.jpg" alt="Ganpati Bappa 2024" class="timeline-img">
+          </div>
+          <div class="timeline-footer">
+            <div class="timeline-caption" data-i18n="year2024Caption">॥ श्री गणेशोत्सव २०२४ ॥</div>
+            <div class="timeline-subtext" data-i18n="year2024Sub">बासुदकर बाप्पा दर्शन</div>
+          </div>
+        </div>
+
+        <!-- Year 2025 -->
+        <div class="timeline-card" data-title="॥ श्री गणेशोत्सव २०२५ - बासुदकर परिवार ॥">
+          <div class="timeline-img-wrapper">
+            <img src="assets/images/2025.jpg" alt="Ganpati Bappa 2025" class="timeline-img">
+          </div>
+          <div class="timeline-footer">
+            <div class="timeline-caption" data-i18n="year2025Caption">॥ श्री गणेशोत्सव २०२५ ॥</div>
+            <div class="timeline-subtext" data-i18n="year2025Sub">बासुदकर बाप्पा दर्शन</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. FOOTER WITH MANTRAS & CREDITS                                          -->
+  <!-- ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <img src="assets/images/balaji_tilak.jpg" alt="Sacred Tilak" class="footer-tilak">
+      <div class="footer-mantra">॥ ॐ गं गणपतये नमः ॥</div>
+      <p class="footer-credits">श्री गणेशोत्सव २०२६ | बासुदकर परिवार, मुंबई</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Fullscreen Image View -->
+  <div id="imageLightbox" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+      <img id="lightboxImg" src="" alt="Enlarged Darshan Image" class="lightbox-img">
+      <div id="lightboxTitle" class="lightbox-title"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast-msg"></div>
+
+  <!-- Audio Elements -->
+  <audio id="bgAudio" src="assets/audio/ganpati_music.mp3" preload="auto" loop></audio>
+  <audio id="bellAudio" src="assets/audio/bell.mp3" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
