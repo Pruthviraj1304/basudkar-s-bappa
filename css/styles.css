@@ -1297,25 +1297,36 @@ h1, h2, h3, h4, .font-heading {
   position: fixed;
   bottom: 30px;
   left: 50%;
-  transform: translateX(-50%) translateY(100px);
+  transform: translateX(-50%) translateY(40px);
   background: rgba(11, 16, 48, 0.96);
-  border: 1px solid var(--gold-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--gold-primary);
   color: #fff;
-  padding: 0.9rem 2rem;
-  border-radius: var(--radius-full);
+  padding: 0.65rem 1.4rem;
+  border-radius: 25px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 204, 0, 0.4);
-  z-index: 10002;
+  z-index: 10005;
   font-weight: 600;
-  opacity: 0;
-  transition: var(--transition);
-  display: flex;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+  max-width: calc(100vw - 36px);
+  width: max-content;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 0.6rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease;
 }
 
 .toast-msg.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* ==========================================================================
@@ -1684,6 +1695,14 @@ h1, h2, h3, h4, .font-heading {
   .footer-credits {
     font-size: 0.82rem;
   }
+
+  .toast-msg {
+    bottom: 20px;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.86rem;
+    max-width: calc(100vw - 28px);
+    border-radius: 20px;
+  }
 }
 
 /* Extra small devices (< 380px) */
@@ -1716,5 +1735,11 @@ h1, h2, h3, h4, .font-heading {
   .hero-theme-pill {
     font-size: 0.7rem;
     padding: 0.35rem 0.6rem;
+  }
+  .toast-msg {
+    bottom: 16px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+    max-width: calc(100vw - 20px);
   }
 }

@@ -661,10 +661,10 @@ class GanpatiApp {
   }
 
   showToast(message) {
-    let toast = document.getElementById('toastMsg');
+    let toast = document.getElementById('toast') || document.getElementById('toastMsg');
     if (!toast) {
       toast = document.createElement('div');
-      toast.id = 'toastMsg';
+      toast.id = 'toast';
       toast.className = 'toast-msg';
       document.body.appendChild(toast);
     }
